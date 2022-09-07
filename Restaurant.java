@@ -23,6 +23,7 @@ public class Restaurant {
         //DELETE ABOVE STATEMENT AND WRITE CODE HERE
     	 	
     	Boolean isResOpen= false;
+    	
     	LocalTime openingTime = restaurant.openingTime;
 		LocalTime closingTime = restaurant.closingTime;
     	LocalTime currentTime=restaurant.getCurrentTime();
@@ -42,6 +43,7 @@ public class Restaurant {
     public List<Item> getMenu() {
        
         //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
+    	
     	List<Item> menuDetails= menu;
     	return menuDetails;
     }
