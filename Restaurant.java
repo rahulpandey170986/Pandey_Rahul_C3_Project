@@ -23,7 +23,6 @@ public class Restaurant {
         //DELETE ABOVE STATEMENT AND WRITE CODE HERE
     	 	
     	Boolean isResOpen= false;
-    	
     	LocalTime openingTime = restaurant.openingTime;
 		LocalTime closingTime = restaurant.closingTime;
     	LocalTime currentTime=restaurant.getCurrentTime();
@@ -43,7 +42,6 @@ public class Restaurant {
     public List<Item> getMenu() {
        
         //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
-    	
     	List<Item> menuDetails= menu;
     	return menuDetails;
     }
@@ -55,8 +53,28 @@ public class Restaurant {
         }
         return null;
     }
+    // Add item from Menu and get Total
+    public Boolean addingItemFromMenu(ArrayList<String> newItem) {
+    	double total=0;
+    	for(int i=0;i<newItem.size();i++) {
+    		for (int j=0; j< menu.size();j++)
+    		{
+    			if( newItem.get(i).equals(menu.get(j).getName())) {
+    				total= menu.get(j).getPrice()+total;   	
+    				System.out.println(menu.get(j));
+    				}
+    		}
+    		
+    	}
+    	System.out.println("Your order will cost: Rs "+total);
+    	Boolean value = false;
+		if (total != 0) {
+			value = true;
+		}
+    	return value;
+    }
     
-   public void addToMenu(String name, int price) {
+    public void addToMenu(String name, int price) {
         Item newItem = new Item(name,price);
         menu.add(newItem);
     }
