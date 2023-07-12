@@ -84,4 +84,9 @@ public class Restaurant {
         this.name =name;
     }
 
+	public Boolean addingItemFromMenu(ArrayList<String> newItem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

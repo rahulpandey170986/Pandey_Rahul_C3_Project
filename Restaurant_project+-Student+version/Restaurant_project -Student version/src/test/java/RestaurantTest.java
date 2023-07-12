@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -49,6 +50,16 @@ class RestaurantTest {
 		restaurant.addToMenu("Sizzling brownie", 319);
 		assertEquals(initialMenuSize + 1, restaurant.getMenu().size());
     }
+    @Test
+	public void adding_item_from_menu() {
+
+		ArrayList<String> newItem = new ArrayList<String>();
+		newItem.add("Vegetable lasagne");
+		newItem.add("Sweet corn soup");
+		Boolean total = restaurant.addingItemFromMenu(newItem);
+		assertTrue(total);
+	}
+
     @Test
     public void removing_item_from_menu_should_decrease_menu_size_by_1() throws itemNotFoundException {
     	int initialMenuSize = restaurant.getMenu().size();
